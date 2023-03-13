@@ -1,5 +1,5 @@
 /*
-Use this class to stor methods used for checking collisions.
+Use this class to store methods used for checking collisions.
 I currently have only one for checking collisions of Rectangles.
 */
 
