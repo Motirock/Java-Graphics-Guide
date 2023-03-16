@@ -18,9 +18,10 @@ public class GamePanel extends JPanel implements Runnable {
 
     //Settings
     public int 
-    screenWidth = 1600, /* 16:9 Aspect Ratio (fixed) */
+    screenWidth = 1600, /* 16:9 Aspect Ratio */
     screenHeight = 900,
-    FPS = 50, /* Amount of graphical updates per second */
+    FPS = 50, //Amount of graphical updates per second
+    updatesPerSecond = 1000, //Amount of logical updates per second
     volume = 50;
     public double GS = screenHeight/900.0; /* graphics scaling: all graphics are same relative size and position regardless of screen size */
 
@@ -248,7 +249,7 @@ public class GamePanel extends JPanel implements Runnable {
     public void run() {
         double drawInterval = 1000000000/FPS;
         double drawDelta = 0;
-        double updateInterval = 1000000000/1000;
+        double updateInterval = 1000000000/updatesPerSecond;
         double updateDelta = 0;
         long lastTime = System.nanoTime();
         long currentTime;
