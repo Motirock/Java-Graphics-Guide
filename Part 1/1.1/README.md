@@ -17,3 +17,5 @@ Game handles all game objects and so updates them independently of GamePanel.
 The draw method handles all graphical updates for GamePanel. It  most importantly calls draw() on Game object game.  
 It is important to have most classes contain an draw() method to handle their own graphical updates.
 Game handles all game objects and so draws them independently of GamePanel.
+
+[1.2](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Part%201/1.2)
