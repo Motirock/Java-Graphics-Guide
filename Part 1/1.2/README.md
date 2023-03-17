@@ -18,3 +18,10 @@ When you first try to compile Main.java, it will fail to compile because there i
 
     import java.awt.Graphics2D;  
     
+-Create the following instance variable inside the class body:
+
+    private GamePanel gp; //Allows access to system functions, like activating fullscreen, playing a sound, or getting mouse and keyboard input.
+    
+-Create the following methods inside the class body:
+
+    public Game
