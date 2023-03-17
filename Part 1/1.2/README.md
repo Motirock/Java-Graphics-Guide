@@ -36,3 +36,5 @@ When you first try to compile Main.java, it will fail to compile because there i
     public draw(Graphics2D g2) {
     
     }
+
+[1.3](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Part%201/1.3)
