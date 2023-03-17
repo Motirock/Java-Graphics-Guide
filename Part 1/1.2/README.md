@@ -1,7 +1,8 @@
 # 1.2 Creating the Game class
 
 When you first try to compile Main.java, it will fail to compile because there is no Game class. To fix this, we will need to create a rudimentary Game class with the required methods.
-### Steps to create a Game class:
+
+### Steps:
 -Navigate to the "src" folder
 -Create a new folder named "game"
 -Create a new file named "Game.java" (the suffix/file type is important)
