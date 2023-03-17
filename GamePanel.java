@@ -162,8 +162,8 @@ public class GamePanel extends JPanel implements Runnable {
     }
 
     //Mouse
-    MouseHandler mouseH = new MouseHandler(this, GS);
-    game.Game game = new game.Game(keyH, mouseH);
+    public MouseHandler mouseH = new MouseHandler(this, GS);
+    game.Game game = new game.Game(this);
     Sound sound = new Sound();
     Thread gameThread;
 
