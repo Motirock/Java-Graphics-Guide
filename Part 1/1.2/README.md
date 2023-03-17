@@ -20,8 +20,19 @@ When you first try to compile Main.java, it will fail to compile because there i
     
 -Create the following instance variable inside the class body:
 
-    private GamePanel gp; //Allows access to system functions, like activating fullscreen, playing a sound, or getting mouse and keyboard input.
+    //Allows access to system functions, like activating fullscreen, playing a sound, or getting mouse and keyboard input.
+    private GamePanel gp;
     
 -Create the following methods inside the class body:
 
-    public Game
+    public Game(GamePanel gp) {
+        this.gp = gp;
+    }
+    
+    public update() {
+    
+    }
+    
+    public draw(Graphics2D g2) {
+    
+    }
