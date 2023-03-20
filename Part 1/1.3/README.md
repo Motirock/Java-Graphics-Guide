@@ -1,4 +1,4 @@
-# 1.3 My First Graphics
+# 1.3 Using draw()
 
 Last time, we created the fundamentals of the Game class. In this section, we will draw our first shape: a red circle.  
 We will NOT modify update() because there are no logical updates to be executed. We will just modify draw().
@@ -15,7 +15,7 @@ We will NOT modify update() because there are no logical updates to be executed.
     
 -Finally, we can draw the circle with the following staement:
 
-    g2.fillOval(400, 50, 800, 800);
+    g2.fillOval(700, 350, 200, 200);
     
  -Now when you compile and run Main.java, a red circle should be shown on screen.
  
