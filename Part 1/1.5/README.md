@@ -24,4 +24,6 @@ The fillRect method is used like so:
     g2.fillRect(int xPosition, int yPosition, int width, int height)
     
 For most shapes (including ovals and rectangles) the x and y parameters refer to the top-left corner of the shape.  
-There are manny other methods for drawing shapes which I will not cover here but there a
+There are manny other methods for drawing shapes which I will not cover here, but you can use the API: [java.awt.Graphics2D API](https://docs.oracle.com/javase/7/docs/api/java/awt/Graphics2D.html)
+
+[1.6](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Part%201/1.6)
