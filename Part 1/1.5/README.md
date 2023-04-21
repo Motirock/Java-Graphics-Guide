@@ -25,6 +25,44 @@ The following code is an example of *four* different ways to get the same shade 
     Color a = new Color(1.0, 0.0, 0.0);         //Red with three floats: r, g, and b
     Color a = new Color(255, 0, 0, 255);        //Red with four integers: r, g, b, and a (opaque)
     Color a = new Color(1.0, 0.0, 0.0, 0.5);    //Red with four floats: r, g, b, and a (translucent)
+    
+To set the color, we simply need to use Graphics2D.setColor(Color color).  
+In summary, there are twelve examples below which all set.  
+    
+    //These methods all involve creating the Color before using it, which can be useful if we're using the same color multiple times
+    //Method 1
+    Color a = new Color(255, 0, 0);
+    g2.setColor(a);
+    //Method 2
+    Color b = new Color(1.0, 0.0, 0.0);
+    g2.setColor(b);
+    //Method 3
+    Color c = new Color(255, 0, 0, 255);
+    g2.setColor(c);
+    //Method 4
+    Color d = new Color(1.0, 0.0, 0.0, 1.0);
+    g2.setColor(d);
+    //Method 5
+    Color e = Color.red;
+    g2.setColor(e);
+    //Method 6
+    Color f = Color.RED;
+    g2.setColor(f);
+    
+    //These methods all create the Color inside the method call, which is usually more concise and readable in my opinion
+    //Method 7
+    g2.setColor(new Color(255, 0, 0));
+    //Method 8
+    g2.setColor(new Color(1.0, 0.0, 0.0));
+    //Method 9
+    g2.setColor(new Color(255, 0, 0, 255));
+    //Method 10
+    g2.setColor(new Color(1.0, 0.0, 0.0, 1.0));
+    //Method 11
+    g2.setColor(Color.red);
+    //Method 12
+    g2.setColor(Color.RED);
+    
 
 ### Layering
 Imagine you are a painter. If you first paint a red circle, and then you cover the canvas in yellow paint, the red circle will no longer be visible. This is how creating shapes with Graphics2D works.  
