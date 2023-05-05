@@ -27,7 +27,7 @@ The following code is an example of *four* different ways to get the same shade 
     Color a = new Color(1.0, 0.0, 0.0, 0.5);    //Red with four floats: r, g, b, and a (translucent)
     
 To set the color, we simply need to use Graphics2D.setColor(Color color).  
-In summary, there are twelve examples below which all set.  
+In summary, there are twelve examples below which all set the color to solid red.  
     
     //These methods all involve creating the Color before using it, which can be useful if we're using the same color multiple times
     //Method 1
