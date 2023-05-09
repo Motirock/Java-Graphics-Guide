@@ -33,9 +33,9 @@ Let's create an `BufferedImage` instance variable of `Game` that will store our 
     //A BufferedImage which does not store anything yet
     public BufferedImage chestImage = null;
     
-Now, let's load it inside the `Game` constructor. I implemented a try-catch statement in case it fails to load, like if the file path specified was wrong.  
-
-    //THIS IS INSIDE THE GAME CONSTRUCTOR
+Now, let's load the chest image to `image` from the `res` folder. These statements should be run inside the `Game` constructor. I implemented a try-catch statement in case it fails to load, like if the file path specified was wrong.  
+    
+    //Loads the chest image from the res folder to image
     try {
         image = ImageIO.read(getClass().getResourceAsStream("/res/chest.png"));
     } catch (IOException e) {
