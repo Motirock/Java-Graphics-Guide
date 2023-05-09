@@ -48,12 +48,23 @@ Remember how we drew shapes with the `Graphics2D` library? We can do the same fo
 First, let's create some variables to keep track of the position and dimensions of the variable.  
 Inside the `Game` class create the following instance variables:  
     
-    int x = 400;    //Top left corner x
+    int x = 350;    //Top left corner x
     int y = 100;    //Top left corner y
-    int w = 100;    //Image width
-    int h = 100;    //Image height
+    int w = 800;    //Image width
+    int h = 800;    //Image height
     
 Then, let's try changing them in the `update()` method.  
+        
+    //Keeps track of total times update() was called
+    updates++;
     
-    time++;
-    if (time % 1
+    //The image moves right and then left, switching direction every second
+    if (updates % 10 == 0) {
+        if (updates % 2000 < 1000)
+            x++;
+        else
+            x--;
+    }
+    
+Finally, we will draw the image in the `draw(Graphics2D)` method.  
+
