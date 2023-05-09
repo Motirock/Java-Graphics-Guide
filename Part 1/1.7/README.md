@@ -27,3 +27,19 @@ To download the image, we will use the `javax.imageio.ImageIO` library.
 Finally, to catch errors while loading the image, we will use the `java.io.IOException` library.  
 
     import java.io.IOException;
+
+Let's create an `BufferedImage` instance variable of `Game` that will store our image.  
+    
+    //A BufferedImage which does not store anything yet
+    public BufferedImage chestImage = null;
+    
+Now, let's load it inside the `Game` constructor. I implemented a try-catch statement in case it fails to load, like if the file path specified was wrong.  
+
+    //THIS IS INSIDE THE GAME CONSTRUCTOR
+    try {
+        image = ImageIO.read(getClass().getResourceAsStream("/res/chest.png"));
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    
+### Drawing an Image
