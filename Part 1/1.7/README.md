@@ -43,3 +43,17 @@ Now, let's load the chest image to `image` from the `res` folder. These statemen
     }
     
 ### Drawing an Image
+
+Remember how we drew shapes with the `Graphics2D` library? We can do the same for images!  
+First, let's create some variables to keep track of the position and dimensions of the variable.  
+Inside the `Game` class create the following instance variables:  
+    
+    int x = 400;    //Top left corner x
+    int y = 100;    //Top left corner y
+    int w = 100;    //Image width
+    int h = 100;    //Image height
+    
+Then, let's try changing them in the `update()` method.  
+    
+    time++;
+    if (time % 1
