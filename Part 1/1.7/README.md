@@ -13,3 +13,17 @@ Once it is downloaded, name it chest.png if it is not named so already.
 For our project, we will need a place to store assets. To do this, we will create a resources folder. 
 In the folder that shares the game and main folder (this is likely the `src` folder), create a new `res` folder (the name matters).  
 Next, drag the `chest.png` image into the `res` folder.  
+
+### Loading an Image
+
+To store an image, we will use the `java.awt.image.BufferedImage` class.  It is imported like so:  
+    
+    import java.awt.image.BufferedImage;
+    
+To download the image, we will use the `javax.imageio.ImageIO` library.  
+
+    import javax.imageio.ImageIO;
+    
+Finally, to catch errors while loading the image, we will use the `java.io.IOException` library.  
+
+    import java.io.IOException;
