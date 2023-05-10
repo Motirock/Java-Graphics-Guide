@@ -69,9 +69,18 @@ Then, let's try changing them in the `update()` method.
 Finally, we will draw the image in the `draw(Graphics2D)` method.  
 I will demonstrate two methods.  
 
-# Method 1: Drawing the Whole Image
-To draw the image, call the `Graphics2D.drawImage` method with the parameters `(Image img, int x, int y, int width, int height, ImageObserver observer)`  
+##### Method 1: Drawing the Whole Image
+To draw the image, call the `Graphics2D.drawImage` method with the parameters `(Image image, int x, int y, int width, int height, ImageObserver observer)`.  
 For the `ImageObserver` parameter, we will put it as null. I don't use it, but if you want to learn more about the `java.awt.image.ImageObserver` interface, [here's the API.](https://docs.oracle.com/javase/8/docs/api/java/awt/image/ImageObserver.html)  
 Below is a code sample using the variables we previously defined:  
     
-    asd
+     g2.drawImage(image, x, y, w, h, null);
+     
+##### Method 2: Drawing a Part of the Image:
+You may choose to use "spritesheets," where multiple images used are kept as part of the same file. This can be helpful if there are multiple frames for an animated image.  
+We will use the `Graphics2D.drawImage` method with the different parameters `(Image image, int destinationX1, int destinationY1, int destinationX2, int destinationY2, int sourceX1, int sourceY1, int sourceX2, int sourceY2, ImageObserver observer)`.  
+The *destination* variables define the top left and bottom right locations of the *destination* rectangle (where it is drawn). The *source* variables define the top left and bottom right locations of the *source* rectangle (where in the file the drawn image is taken from). The source rectangle depends on the dimensions of your file.  
+Below is a code sample using this method and the variables we previously defined:  
+    
+    //
+    g2.drawImage(
