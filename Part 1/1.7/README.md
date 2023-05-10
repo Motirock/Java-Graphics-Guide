@@ -82,5 +82,13 @@ We will use the `Graphics2D.drawImage` method with the different parameters `(Im
 The *destination* variables define the top left and bottom right locations of the *destination* rectangle (where it is drawn). The *source* variables define the top left and bottom right locations of the *source* rectangle (where in the file the drawn image is taken from). The source rectangle depends on the dimensions of your file.  
 Below is a code sample using this method and the variables we previously defined:  
     
-    //
-    g2.drawImage(
+    //Setting variables to get the right part of the source file
+    int sourceX = 0;    //Top left corner y
+    int sourceY = 0;    //Top left corner x
+    int sourceW = 20;   //Width for whole image
+    int sourceH = 20;   //Height for whole image
+    g2.drawImage(image,     //Image
+        x, y, x+w, y+h,     //Destination Rectangle
+        sourceX, sourceY, sourceX+sourceW, sourceY+sourceH, //Source Rectangle
+        null);  //ImageObserver
+        
