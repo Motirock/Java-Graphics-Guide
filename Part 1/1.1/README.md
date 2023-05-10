@@ -7,8 +7,8 @@ As you probably know, `Main` is typically the class that contains `main()` which
 The GamePanel coordinates the functions of the game. It handles loading graphics, keyboard controls, mouse input, sound, and more. It contains a `Game` object which contains information about the game itself. Most importantly, it contains three functions which are key to understand.
 #### run()
 The run method is run in a loop until the program ends. The program executes `run()` as many times as possible. This is not typically desired for games, because it may make it run too fast and use up too many resources. Instead, it executes the methods `update()` and `draw()`. These are called at set intervals.  
-To change the interval at which it updates, change the variable updatesPerSecond.  
-To change the interval at which it draws, change the varibale FPS.  
+To change the interval at which it updates, change the variable `updatesPerSecond`.  
+To change the interval at which it draws, change the varbiable `FPS`.  
 #### update()
 The update method handles all logical updates for `GamePanel`. It resets variables and most importantly calls `update()` on `Game `object game.  
 It is important to have most classes contain an `update()` method to handle their own logical updates.
