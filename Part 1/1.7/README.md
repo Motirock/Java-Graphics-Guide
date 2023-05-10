@@ -67,4 +67,11 @@ Then, let's try changing them in the `update()` method.
     }
     
 Finally, we will draw the image in the `draw(Graphics2D)` method.  
+I will demonstrate two methods.  
 
+# Method 1: Drawing the Whole Image
+To draw the image, call the `Graphics2D.drawImage` method with the parameters `(Image img, int x, int y, int width, int height, ImageObserver observer)`  
+For the `ImageObserver` parameter, we will put it as null. I don't use it, but if you want to learn more about the `java.awt.image.ImageObserver` interface, [here's the API.](https://docs.oracle.com/javase/8/docs/api/java/awt/image/ImageObserver.html)  
+Below is a code sample using the variables we previously defined:  
+    
+    asd
