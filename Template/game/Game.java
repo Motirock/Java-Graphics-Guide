@@ -9,12 +9,10 @@ import java.util.ArrayList;
 public class Game {
     private long updates = 0;
 
-    private KeyHandler keyH;
-    private MouseHandler mouseH;
+    private GamePanel gp;
 
-    public Game(KeyHandler keyH, MouseHandler mouseH) {
-        this.keyH = keyH;
-        this.mouseH = mouseH;
+    public Game(GamePanel gp) {
+        this.gp = gp;
     }
 
     public void update() {
