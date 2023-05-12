@@ -5,7 +5,7 @@ In this part, I will explain more of the fundamentals of these libraries.
 
 ### Colors
 
-When we set a color, there is two ways to do this. First we will have to import `java.awt.Color`, like so.
+When we set a color, there is two ways to do this. Firstly, if this has not been done already, we will have to import `java.awt.Color`, like so.
 
     import java.awt.Color;
    
@@ -69,11 +69,11 @@ Imagine you are a painter. If you first paint a red circle, and then you cover t
 For example, try to think what would be shown as a result of this code:
     
     g2.setColor(Color.BLUE);
-    g2.fillOval(400, 50, 800, 800);
+    g2.fillOval(350, 50, 800, 800);
     g2.setColor(Color.GREEN);
-    g2.fillOval(400, 50, 800, 800);
+    g2.fillOval(450, 50, 800, 800);
     
-If you thought it would show a green circle, you are correct.  
+If you thought it would show an entire green circle and part of a blue circle, you are correct.  
 The reason for this is that *first* and blue circle is drawn, and then a green circle is drawn *over* the green circle. It is important to remember that the blue circle is still there, even if we can't see it.  
     
 ### Shapes
