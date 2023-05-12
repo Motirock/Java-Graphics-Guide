@@ -1,7 +1,6 @@
 package game;
 
-import main.KeyHandler;
-import main.MouseHandler;
+import main.GamePanel;
 
 import java.awt.Graphics2D;
 import java.util.ArrayList;
