@@ -24,6 +24,34 @@ This method takes care of bothing rotating and drawing the image.
 `image` is the image that we want to draw. 
 Just like in our other methods, `x`, `y`, `width`, and `height` refer to the position and dimensions of the image *before* being rotated.  
 `degrees`, `pivotX`, and `pivotY` are all more complicated.  
-To help visualize let's use a [graphing calculator]().  
+`pivotX` and `pivotY` is the position which the image is rotated around.  If you want to just rotate the image, like a top would spin, make the pivot point be the center of the image's rectangle.  
+The way that things are rotated might not be intuitive.  
+Rotations work like in polar the polar coordinate system, where 0° is directly right, and as the rotation amount (by default in radians) increases, it rotates *counterclockwise*.  
+To help visualize you can use a [graphing calculator](https://www.desmos.com/calculator) with polar graphing.  
+For example, in the graph below the red point has been rotated 0°, the blue point has been rotated 45°, and the black point has been rotated 450°.  
+![Polar Graph](/Assets/polar_graph.png "Polar Graph")
+
+### Use in a Program
+
+Let's say you want an animation of a ??? spinning. You can do that with the above method in the following way:  
+First, let's create a new instance variable of `Game` called `degrees`.  
+    
+    private int degrees = 0;
+
+Next, let's increase it every second by changing the `update()` method of `Game`.  
+    
+    //Increments the amount of updates
+    updates++;
+    //Increases the rotation by 1° every second
+    if (updates % 20 == 0)
+        degrees++;
+    //Resets the rotation to 0 after reaching 360°
+    if (degrees % 360 == 0)
+        degrees = 0;
+        
+Because we are changing the image used, we need to upload the file. Drag in this [picture](TEMP) of the ??? into the `res` folder after downloading it.  
+Next, update the file path to reflect the change in image. So if you named it `???.png`, you would change the the line loading the image to be:
     
     
+
+If you want to have more image utilities, you can always modify the class, like adding another rotate method that takes radians instead of degrees.
