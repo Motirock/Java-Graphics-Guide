@@ -31,7 +31,7 @@ Finally, to catch errors while loading the image, we will use the `java.io.IOExc
 Let's create an `BufferedImage` instance variable of `Game` that will store our image.  
     
     //A BufferedImage which does not store anything yet
-    public BufferedImage chestImage = null;
+    public BufferedImage image = null;
     
 Now, let's load the chest image to `image` from the `res` folder. These statements should be run inside the `Game` constructor. I implemented a try-catch statement in case it fails to load, like if the file path specified was wrong.  
     
