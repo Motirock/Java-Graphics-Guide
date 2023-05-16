@@ -65,4 +65,6 @@ Now, we will have to modify our `draw(Graphics2D)` method of `Game` to rotate th
 
 ### A Note on "Graphics Scaling"
 
+If you have looked through my code, you may notice the variable `GS`. I use this to keep track of how large the graphics are, relative to 1600x900. So if I want my window to be 2400x1350, `GS` would become 1.5 (this is relying on the fact that the ratio is constant). Then, I multiply the position and dimensions by this, so that the graphics scale correctly.  
+
 If you want to have more image utilities, you can always modify the class, like adding another rotate method that takes radians instead of degrees.
