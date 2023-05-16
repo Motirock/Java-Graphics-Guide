@@ -33,12 +33,17 @@ For example, in the graph below the red point has been rotated 0°, the blue poi
 
 ### Use in a Program
 
-Let's say you want an animation of a ??? spinning. You can do that with the above method in the following way:  
+Let's say you want an animation of anv image spinning. You can do that with the above method in the following way:  
 First, let's create a new instance variable of `Game` called `degrees`.  
     
     private int degrees = 0;
+    
+Also, to make an image spin around its center, we need it to pivot around its center.
 
-Next, let's increase it every second by changing the `update()` method of `Game`.  
+    private int centerX = x+w/2;
+    private int centerY = y+h/2;
+
+Next, let's increase the rotation of the image every second by changing the `update()` method of `Game`.  
     
     //Increments the amount of updates
     updates++;
@@ -49,9 +54,15 @@ Next, let's increase it every second by changing the `update()` method of `Game`
     if (degrees % 360 == 0)
         degrees = 0;
         
-Because we are changing the image used, we need to upload the file. Drag in this [picture](TEMP) of the ??? into the `res` folder after downloading it.  
-Next, update the file path to reflect the change in image. So if you named it `???.png`, you would change the the line loading the image to be:
+Bif you want to change the image used, you need to upload the file. For my example, I'll use the same chest image, which you likely download in [1.7](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Part%201/1.7).  
+Next, if you want to change the image used, update the file path to reflect the change in image. So if you named the image `apple.png`, you would change the the line loading the image to be:
     
+    image = ImageIO.read(getClass().getResourceAsStream("/res/apple.png"));
     
+Now, we will have to modify our `draw(Graphics2D)` method of `Game` to rotate the image.  
+
+    ImageUtils.drawRotatedImage(g2, image, degrees, x, y, w, h, centerX, centerY, 1.0);
+
+### A Note on "Graphics Scaling"
 
 If you want to have more image utilities, you can always modify the class, like adding another rotate method that takes radians instead of degrees.
