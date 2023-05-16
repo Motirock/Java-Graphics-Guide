@@ -94,3 +94,5 @@ Below is a code sample using this method and the variables we previously defined
         
    
 To learn more about `BufferedImage` class, you can visit the [API.](https://docs.oracle.com/javase/8/docs/api/java/awt/image/BufferedImage.html)
+
+[1.8](https://github.com/Motirock/An-Introduction-To-Java-Graphics/edit/main/Part%201/1.8)
