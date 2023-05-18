@@ -8,13 +8,14 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.FloatControl;
 
 public class Sound {
-    URL soundURL[] = new URL[30];   //By default, it can store 30 sounds
-    Clip clip;                      //Used to play audio
-    public int volume = 50;         //Volume: default is 50%. I made sure it is linear instead of in decibels (logarithmic)
-    FloatControl fc;                //Used to help control volume
+    private URL soundURL[] = new URL[30];   //By default, it can store 30 sounds
+    private Clip clip;                      //Used to play audio
+    private int volume = 50;         //Volume: default is 50%. I made sure it is linear instead of in decibels (logarithmic)
+    private FloatControl fc;                //Used to help control volume
     
     //Loads URLs of sounds
     public Sound() {
+        //Placeholders
         //soundURL[0] = getClass().getResource("/res/audio/example_1.wav");
         //soundURL[1] = getClass().getResource("/res/audio/example_2.wav");
     }
