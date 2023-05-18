@@ -15,3 +15,4 @@ In the beginning of the class definition for `Sound`, there are the following in
     private FloatControl fc; 
   
 Much more importantly, there are methods to actually use the class.  
+First, there is the constructor. This is used to load the sounds used.  
