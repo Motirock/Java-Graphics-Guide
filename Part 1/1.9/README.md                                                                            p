@@ -76,4 +76,6 @@ For it to work, we most call `play()` after `setFile(int i)` for the `Sound` cla
 `getVolume()` returns the volume.  
 `incrementVolume()` and `decrementVolume()` increment and decrement volume, respectively. By default it does this by 5 percent, but you can go into the `Sound` class and edit it.  
 
+# IMPLEMENTING IN GAMEPANEL!!!
+
 Now you should be ready to move on to input: [next lesson](____)
