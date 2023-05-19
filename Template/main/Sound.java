@@ -16,10 +16,6 @@ public class Sound {
     
     //Loads URLs of sounds
     public Sound(ArrayList<String> files) {
-        //Placeholders
-        //soundURL[0] = getClass().getResource("/res/audio/example_1.wav");
-        //soundURL[1] = getClass().getResource("/res/audio/example_2.wav");
-        
         for (int i = 0; i < files.size(); i++)
             soundURLs.getClass().getResource("/res/audio/"+add(files.get(i));
     }
