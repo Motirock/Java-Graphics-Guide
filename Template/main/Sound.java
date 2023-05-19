@@ -54,13 +54,34 @@ public class Sound {
     }
     
     //Updates volume of the FloatControl to the current linear-scaled volume
-    void updateVolume() {
+    private void updateVolume() {
+        if (volume < 0)
+            volume = 0;
+        if (volume > 100)
+            volume = 100;
         fc.setValue((float) (Math.log10(Math.pow(10, volume))/100*86-80));
     }
     
     //Sets volume to an integer 0-100 on a logarthmic scale
     public void setVolume(int vol) {
         volume = vol;
+        updateVolume();
+    }
+                                             
+    //Returns volume
+    public int getVolume() {
+        return volume;
+    }
+    
+    //Increments volume by 5
+    public void incrementVolume() {
+        volume += 5;
+        updateVolume();
+    }
+    
+    //Decrements volume by 5
+    public void decrementVolume() {
+        volume -= 5;
         updateVolume();
     }
 }
