@@ -21,7 +21,7 @@ public class Sound {
         //soundURL[1] = getClass().getResource("/res/audio/example_2.wav");
         
         for (int i = 0; i < files.size(); i++)
-            soundURLs.add(
+            soundURLs.getClass().getResource("/res/audio/"+add(files.get(i));
     }
     
     //Sets the file being played
