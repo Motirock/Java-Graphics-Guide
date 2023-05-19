@@ -8,6 +8,8 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.FloatControl;
 
+//TODO pausing and resuming????
+
 public class Sound {
     private ArrayList<URL> soundURLs = new ArrayList<URL>();   //By default, it can store 30 sounds
     private Clip clip;                      //Used to play audio
