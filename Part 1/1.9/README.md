@@ -69,3 +69,11 @@ For it to work, we most call `play()` after `setFile(int i)` for the `Sound` cla
 
 ### Other Methods
 
+`loop()` loops sounds TODO CHECK. 
+`stop()` TODO CHECK. 
+`updateVolume()` is only used by the class to update the volume from the linear-scaled `volume` instance variable of `Game` to decibels (logarithmic) and then sets it using classes imported. Also, if `volume` is out of the range of 0-100, it is adjusted appropriately.  
+`setVolume(int vol)` sets the volume based on the integer passed as a parameter.  
+`getVolume()` returns the volume.  
+`incrementVolume()` and `decrementVolume()` increment and decrement volume, respectively. By default it does this by 5 percent, but you can go into the `Sound` class and edit it.  
+
+Now you should be ready to move on to input: [next lesson](____)
