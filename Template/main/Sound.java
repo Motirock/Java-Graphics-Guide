@@ -43,7 +43,7 @@ public class Sound {
         clip.start();
     }
     
-    //Loops the current sound
+    //Loops the current sound WHEN DOES STOP LOOPING?
     public void loop() {
         clip.loop(Clip.LOOP_CONTINUOUSLY);
     }
