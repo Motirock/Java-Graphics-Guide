@@ -15,4 +15,57 @@ In the beginning of the class definition for `Sound`, there are the following in
     private FloatControl fc; 
   
 Much more importantly, there are methods to actually use the class.  
+
+### The Constructor
+
 First, there is the constructor. This is used to load the sounds used.  
+
+    //Loads URLs of sounds
+    public Sound(ArrayList<String> files) {
+        for (int i = 0; i < files.size(); i++)
+            soundURLs.getClass().getResource("/res/audio/"+add(files.get(i));
+    }
+    
+The only parameters is an `ArrayList` of strings which is contains the names of the audio files. For example, if you named your sounds `death.wav` and `heal.wav`, you would load it using the constructor of the `Sound` class in the following way:
+    
+    //First, it creates a list of the Strings we need
+    //Then, it creates an ArrayList from this list
+    //Finally, it passes this ArrayList to the Sound in a constructor to load them
+    Sound sound = new Sound(new ArrayList<String>(Arrays.asList("death.wav", "heal.wav")));
+  
+### Setting the File
+
+After loading them to the `Sound` class we will have to set the file we want as played.  
+This is where the `setFile(int)` method comes in.  
+
+    //Sets the file being played. Returns whether or not it was successful without errors
+    public boolean setFile(int i) {
+        try {
+            AudioInputStream sound = AudioSystem.getAudioInputStream(soundURLs.get(i));
+            clip = AudioSystem.getClip();
+            clip.open(sound);
+            fc = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+            updateVolume();
+            return true;
+        } catch(Exception e) {
+            return false;
+        }
+        return false;
+    }
+    
+We pass to the method the index of the sound file we want to play. This means that we will have to know the index of the file name in the `ArrayList` we passed in the constructor of the `Sound` object.   
+### Playing the Sound
+
+No sound will play yet, because we haven't called the `play()` method.  
+
+    //Plays the current sound from the beginning
+    public void play() {
+        clip.setFramePosition(0);
+        clip.start();
+    }
+
+The `play()` method plays the sound we sent with `setfile(int i)` from the beginning.  
+For it to work, we most call `play()` after `setFile(int i)` for the `Sound` class to work as intended.  
+
+### Other Methods
+
