@@ -20,15 +20,19 @@ public class Sound {
             soundURLs.getClass().getResource("/res/audio/"+add(files.get(i));
     }
     
-    //Sets the file being played
-    public void setFile(int i) {
+    //Sets the file being played. Returns whether or not it was successful without errors
+    public boolean setFile(int i) {
         try {
             AudioInputStream sound = AudioSystem.getAudioInputStream(soundURLs.get(i));
             clip = AudioSystem.getClip();
             clip.open(sound);
             fc = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
             updateVolume();
-        } catch(Exception e) {}
+            return true;
+        } catch(Exception e) {
+            return false;
+        }
+        return false;
     }
     
     //Plays the current sound from the beginning
