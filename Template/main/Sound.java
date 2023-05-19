@@ -48,7 +48,7 @@ public class Sound {
         clip.loop(Clip.LOOP_CONTINUOUSLY);
     }
     
-    //Stops the current sounds
+    //Stops the current sounds TODO DOES THIS PAUSE OR CLEAR?
     public void stop() {
         clip.stop();
     }
