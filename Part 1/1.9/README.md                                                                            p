@@ -76,6 +76,26 @@ For it to work, we most call `play()` after `setFile(int i)` for the `Sound` cla
 `getVolume()` returns the volume.  
 `incrementVolume()` and `decrementVolume()` increment and decrement volume, respectively. By default it does this by 5 percent, but you can go into the `Sound` class and edit it.  
 
-# IMPLEMENTING IN GAMEPANEL!!!
+### Playing a Sound Effect Example
 
-Now you should be ready to move on to input: [next lesson](____)
+bruh.  
+To play a "bruh" sound effect, there are several steps.  
+
+##### Downloading
+
+To play a "bruh" sound effect, we need to first download it.  
+After [downloading](https://github.com/Motirock/An-Introduction-To-Java-Graphics/blob/main/Resources/Audio%20Files/bruh.wav) the sound effect, let's put it in the `res` folder.  
+
+##### Setting File Path
+
+File paths are set when we construct the `Sound` object in `GamePanel`, so we will have to modify the `GamePanel` class.  
+Change the line where we create the `Sound` object in `GamePanel` (it is after the section involing keystrokes and directly after the creation of the `Game` object) to be:
+
+  Sound sound = new Sound(new ArrayList<String>(Arrays.asList("bruh.wav", "bruh.wav")));
+  
+If it this already (it is like this in the template), you don't have to modify it.  
+Now, we can start modifying the `Game` class. 
+In the //TODO do this at home, create example sound program and test all methods
+
+
+Now you should be ready to move on to input: [next lesson](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Part%201/1.10?scrlybrkr=efa11cf5)
