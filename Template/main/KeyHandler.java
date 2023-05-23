@@ -43,42 +43,42 @@ public class KeyHandler {
 	//Arrow keys
 	public class UpPressedAction extends AbstractAction {
 		@Override public void actionPerformed(ActionEvent e) {
-			upIsPressed = true;
+			upArrowIsPressed = true;
 		}
 	}
 	public class UpReleasedAction extends AbstractAction {
 		@Override public void actionPerformed(ActionEvent e) {
-			upIsPressed = false;
+			upArrowIsPressed = false;
 		}
 	}
 	public class DownPressedAction extends AbstractAction {
 		@Override public void actionPerformed(ActionEvent e) {
-			downIsPressed = true;
+			downArrowIsPressed = true;
 		}
 	}
 	public class DownReleasedAction extends AbstractAction {
 		@Override public void actionPerformed(ActionEvent e) {
-			downIsPressed = false;
+			downArrowIsPressed = false;
 		}
 	}
 	public class LeftPressedAction extends AbstractAction {
 		@Override public void actionPerformed(ActionEvent e) {
-			leftIsPressed = true;
+			leftArrowIsPressed = true;
 		}
 	}
 	public class LeftReleasedAction extends AbstractAction {
 		@Override public void actionPerformed(ActionEvent e) {
-			leftIsPressed = false;
+			leftArrowIsPressed = false;
 		}
 	}
 	public class RightPressedAction extends AbstractAction {
 		@Override public void actionPerformed(ActionEvent e) {
-			rightIsPressed = true;
+			rightArrowIsPressed = true;
 		}
 	}
 	public class RightReleasedAction extends AbstractAction {
 		@Override public void actionPerformed(ActionEvent e) {
-			rightIsPressed = false;
+			rightArrowIsPressed = false;
 		}
 	}
 }	
