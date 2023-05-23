@@ -2,9 +2,9 @@
 This class is used to store Actions which handle what happens when keys are pressed.
 
 How to add an action for a key:
-	1. Create a boolean to keep track of if a certain key is pressed. I format it as [keyName]IsPressed.
+	1. Create a boolean to keep track of if a certain key is pressed. I format it as [keyName]IsPressed. For this example, I'll being using the "up" key stroke (whether that is by pressing w or the up arrow).  
 	
-	2. Create two new classes with a relevant name, one for handling the key being pressed and the other for being released
+	2. Create two new classes with a relevant name, one for handling the key being pressed and the other for being released.
 		Example:
 		"
 		public class UpPressedAction extends AbstractAction {}
@@ -12,7 +12,7 @@ How to add an action for a key:
 		public class UpReleasedAction extends AbstractAction {}
 		"
 	
-	3. Add the actionPerformed method
+	3. Add the actionPerformed method.
 		Example:
 		"
 		public class UpPressedAction extends AbstractAction {
@@ -28,7 +28,7 @@ How to add an action for a key:
 		}
 		"
 	
-	4. To continue with the process visit TODO LINK TO EXPLANATION OF KEYBINDINGS
+	4. To continue with the process visit github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Part%201/1.10
 */
 
 package main;
