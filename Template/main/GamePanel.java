@@ -64,8 +64,8 @@ public class GamePanel extends JPanel implements Runnable {
     //Game object: responsible for game itself
     game.Game game = new game.Game(this);
 		
-    //Sound
-    Sound sound = new Sound();
+    //Sound: the Strings are the names of the sound files used. Also note that the order matters.
+    Sound sound = new Sound(new ArrayList<String>(Arrays.asList("bruh.wav", "bruh.wav")));
 	
     //Thread is used to run the run() method
     Thread gameThread;
