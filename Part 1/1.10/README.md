@@ -27,21 +27,21 @@ At the top there are detailed versions of the first three steps:
 2. Create two new classes with a relevant name, one for handling the key being pressed and the other for being released.  
 Example:
 
-    public class UpPressedAction extends AbstractAction {}
-
-    public class UpReleasedAction extends AbstractAction {}
+    	public class UpPressedAction extends AbstractAction {}
+	
+    	public class UpReleasedAction extends AbstractAction {}
 	
 3. Add the actionPerformed method to each, updating the boolean variable we created.  
 Example:
 
-    public class UpPressedAction extends AbstractAction {
-        @Override public void actionPerformed(ActionEvent e) {
-            upIsPressed = true;
-        }
-    }
+	    public class UpPressedAction extends AbstractAction {
+		@Override public void actionPerformed(ActionEvent e) {
+		    upIsPressed = true;
+		}
+	    }
 
-    public class UpReleasedAction extends AbstractAction {
-        @Override public void actionPerformed(ActionEvent e) {
-            upIsPressed = false;
-        }
-    }
+	    public class UpReleasedAction extends AbstractAction {
+		@Override public void actionPerformed(ActionEvent e) {
+		    upIsPressed = false;
+		}
+	    }
