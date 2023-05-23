@@ -1,19 +1,19 @@
 package main;
 
-//import javax.imageio.ImageIO;
 import javax.swing.*;
 
 import java.awt.*;
-//import java.awt.image.BufferedImage;
-//import java.io.IOException;
 
 public class GamePanel extends JPanel implements Runnable {
     //Game Globals
     public boolean isFullScreen = false,
     mouseLeftClicked = false, mouseLeftPressed = false, mouseRightClicked = false, mouseRightPressed = false, mouseScrolled = false;
+    //Used to keep track of which menu is open (not implemented
     public int menuID = 0, 
     mouseX = 0, mouseY = 0, mouseScrollAmount;
+    //Keeps track of if the game is playing, in a menu, etc. If you want to pause and resume in your game, I would reccomend using these variables.
     public enum GameState {PLAYING, INMENU, PAUSED, INGAMEMENU}
+    //Playing by default
     public GameState gameState = GameState.PLAYING;
 
     //Settings
@@ -25,33 +25,9 @@ public class GamePanel extends JPanel implements Runnable {
     volume = 50;
     public double GS = screenHeight/900.0; /* graphics scaling: all graphics are same relative size and position regardless of screen size */
 
-    //Preloads commonly used sprites. This only works when a limited amount of graphics
-    /*public BufferedImage    
-    public void getCommonImages() {
-        try {
-           // main_menu_background = ImageIO.read(getClass().getResourceAsStream("/res/background/menu/main_menu.jpg"));
-           System.out.println("loading images");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }*/
-
     //Keyboard
     public KeyHandler keyH = new KeyHandler();
-    //Keys for menu interaction
-    Action upArrowPressedAction = keyH.new UpArrowPressedAction();
-    Action upArrowReleasedAction = keyH.new UpArrowReleasedAction();
-    Action downArrowPressedAction = keyH.new DownArrowPressedAction();
-    Action downArrowReleasedAction = keyH.new DownArrowReleasedAction();
-    Action leftArrowPressedAction = keyH.new LeftArrowPressedAction();
-    Action leftArrowReleasedAction = keyH.new LeftArrowReleasedAction();
-    Action rightArrowPressedAction = keyH.new RightArrowPressedAction();
-    Action rightArrowReleasedAction = keyH.new RightArrowReleasedAction();
-    Action enterPressedAction = keyH.new EnterPressedAction();
-    Action enterReleasedAction = keyH.new EnterReleasedAction();
-    Action escapePressedAction = keyH.new EscapePressedAction();
-    Action escapeReleasedAction = keyH.new EscapeReleasedAction();
-    //Movement
+    //Actions representing different key presses
     Action upPressedAction = keyH.new UpPressedAction();
     Action upReleasedAction = keyH.new UpReleasedAction();
     Action downPressedAction = keyH.new DownPressedAction();
@@ -60,111 +36,38 @@ public class GamePanel extends JPanel implements Runnable {
     Action leftReleasedAction = keyH.new LeftReleasedAction();
     Action rightPressedAction = keyH.new RightPressedAction();
     Action rightReleasedAction = keyH.new RightReleasedAction();
-    //Selecting elements
-    Action equip1PressedAction = keyH.new Equip1PressedAction();
-    Action equip2PressedAction = keyH.new Equip2PressedAction();
-    Action equip3PressedAction = keyH.new Equip3PressedAction();
-    Action equip4PressedAction = keyH.new Equip4PressedAction();
-    Action equip5PressedAction = keyH.new Equip5PressedAction();
-    Action equip6PressedAction = keyH.new Equip6PressedAction();
-    Action equip7PressedAction = keyH.new Equip7PressedAction();
-    Action equip8PressedAction = keyH.new Equip8PressedAction();
-    Action equip9PressedAction = keyH.new Equip9PressedAction();
-    //Game speed
-    Action increaseGameSpeedPressedAction = keyH.new IncreaseGameSpeedPressedAction();
-    Action increaseGameSpeedReleasedAction = keyH.new IncreaseGameSpeedReleasedAction();
-    Action decreaseGameSpeedPressedAction = keyH.new DecreaseGameSpeedPressedAction();
-    Action decreaseGameSpeedReleasedAction = keyH.new DecreaseGameSpeedReleasedAction();
-    Action pauseGameSpeedPressedAction = keyH.new PauseGameSpeedPressedAction();
     //JComponent that the keybinds are added to
     JComponent thisWindow = Main.window.getRootPane();
     public void updateKeyBindings() {
-        //Keys for menu interaction
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("UP"), "upArrowPressed");
-		thisWindow.getActionMap().put("upArrowPressed", upArrowPressedAction);
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("released UP"), "upArrowReleased");
-		thisWindow.getActionMap().put("upArrowReleased", upArrowReleasedAction);
-		thisWindow.getInputMap().put(KeyStroke.getKeyStroke("DOWN"), "downArrowPressed");
-		thisWindow.getActionMap().put("downArrowPressed", downArrowPressedAction);
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("released DOWN"), "downArrowReleased");
-		thisWindow.getActionMap().put("downArrowReleased", downArrowReleasedAction);
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("LEFT"), "leftArrowPressed");
-		thisWindow.getActionMap().put("leftArrowPressed", leftArrowPressedAction);
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("released LEFT"), "leftArrowReleased");
-		thisWindow.getActionMap().put("leftArrowReleased", leftArrowReleasedAction);
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("RIGHT"), "rightArrowPressed");
-		thisWindow.getActionMap().put("rightArrowPressed", rightArrowPressedAction);
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("released RIGHT"), "rightArrowReleased");
-		thisWindow.getActionMap().put("rightArrowReleased", rightArrowReleasedAction);
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("ENTER"), "enterPressed");
-		thisWindow.getActionMap().put("enterPressed", enterPressedAction);
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("released ENTER"), "enterReleased");
-		thisWindow.getActionMap().put("enterReleased", enterReleasedAction);
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("ESCAPE"), "escapePressed");
-		thisWindow.getActionMap().put("escapePressed", escapePressedAction);
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("released ESCAPE"), "escapeReleased");
-		thisWindow.getActionMap().put("escapeReleased", escapeReleasedAction);
         //Movement
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("W"), "upPressed");
+        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("UP"), "upPressed");
 		thisWindow.getActionMap().put("upPressed", upPressedAction);
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("released W"), "upReleased");
+        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("released UP"), "upReleased");
 		thisWindow.getActionMap().put("upReleased", upReleasedAction);
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("S"), "downPressed");
+        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("DOWN"), "downPressed");
 		thisWindow.getActionMap().put("downPressed", downPressedAction);
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("released S"), "downReleased");
+        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("released DOWN"), "downReleased");
 		thisWindow.getActionMap().put("downReleased", downReleasedAction);
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("A"), "leftPressed");
+        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("LEFT"), "leftPressed");
 		thisWindow.getActionMap().put("leftPressed", leftPressedAction);
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("released A"), "leftReleased");
+        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("released LEFT"), "leftReleased");
 		thisWindow.getActionMap().put("leftReleased", leftReleasedAction);
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("D"), "rightPressed");
+        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("RIGHT"), "rightPressed");
 		thisWindow.getActionMap().put("rightPressed", rightPressedAction);
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("released D"), "rightReleased");
+        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("released RIGHT"), "rightReleased");
 		thisWindow.getActionMap().put("rightReleased", rightReleasedAction);
-        //Selecting elements
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("1"), "equip1Pressed");
-		thisWindow.getActionMap().put("equip1Pressed", equip1PressedAction);
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("2"), "equip2Pressed");
-		thisWindow.getActionMap().put("equip2Pressed", equip2PressedAction);
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("3"), "equip3Pressed");
-		thisWindow.getActionMap().put("equip3Pressed", equip3PressedAction);
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("4"), "equip4Pressed");
-		thisWindow.getActionMap().put("equip4Pressed", equip4PressedAction);
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("5"), "equip5Pressed");
-		thisWindow.getActionMap().put("equip5Pressed", equip5PressedAction);
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("6"), "equip6Pressed");
-		thisWindow.getActionMap().put("equip6Pressed", equip6PressedAction);
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("7"), "equip7Pressed");
-		thisWindow.getActionMap().put("equip7Pressed", equip7PressedAction);
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("8"), "equip8Pressed");
-		thisWindow.getActionMap().put("equip8Pressed", equip8PressedAction);
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("9"), "equip9Pressed");
-		thisWindow.getActionMap().put("equip9Pressed", equip9PressedAction);
-        //Game speed
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("UP"), "incSpeedPressed");
-		thisWindow.getActionMap().put("incSpeedPressed", increaseGameSpeedPressedAction);
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("released UP"), "incSpeedReleased");
-		thisWindow.getActionMap().put("incSpeedReleased", increaseGameSpeedReleasedAction);
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("RIGHT"), "incSpeedPressed");
-		thisWindow.getActionMap().put("incSpeedPressed", increaseGameSpeedPressedAction);
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("released RIGHT"), "incSpeedReleased");
-		thisWindow.getActionMap().put("incSpeedReleased", increaseGameSpeedReleasedAction);
-		thisWindow.getInputMap().put(KeyStroke.getKeyStroke("DOWN"), "decSpeedReleased");
-		thisWindow.getActionMap().put("decSpeedReleased", decreaseGameSpeedPressedAction);
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("released DOWN"), "decSpeedPressed");
-		thisWindow.getActionMap().put("decSpeedPressed", decreaseGameSpeedReleasedAction);
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("LEFT"), "decSpeedReleased");
-		thisWindow.getActionMap().put("decSpeedReleased", decreaseGameSpeedPressedAction);
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("released LEFT"), "decSpeedPressed");
-		thisWindow.getActionMap().put("decSpeedPressed", decreaseGameSpeedReleasedAction);
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("SPACE"), "pausePressed");
-		thisWindow.getActionMap().put("pausePressed", pauseGameSpeedPressedAction);
     }
 
     //Mouse
     public MouseHandler mouseH = new MouseHandler(this, GS);
+	
+    //Game object: responsible for game itself
     game.Game game = new game.Game(this);
+		
+    //Sound
     Sound sound = new Sound();
+	
+    //Thread is used to run the run() method
     Thread gameThread;
 
     //Used in other classes where GameState can't be accessed
@@ -201,15 +104,12 @@ public class GamePanel extends JPanel implements Runnable {
 
     public GamePanel() {
         //System stuff
-        //getCommonImages();
-
-        //playSF(0);
         updateKeyBindings();
-        
-        //Scaling for fullscreen requires additional information, so it comes last
+       
         if (isFullScreen)
             setFullScreen();
 
+	//Scaling for fullscreen requires additional information, so it comes last
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
         this.setBackground(Color.black);
         this.setDoubleBuffered(true);
@@ -225,20 +125,22 @@ public class GamePanel extends JPanel implements Runnable {
         GraphicsDevice gd = ge.getDefaultScreenDevice();
 
         //Setting the JFrame to have the proper resolution
-        screenWidth = 2560;//ge.getMaximumWindowBounds().width;
-        screenHeight = 1440;//ge.getMaximumWindowBounds().height;
+        screenWidth = 2560;	//You can try replacing with: ge.getMaximumWindowBounds().width;
+        screenHeight = 1440;	//You can try replacing with: ge.getMaximumWindowBounds().height;
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
         GS = screenHeight/900.0;
-        //Resets the mouse handler
+        //Resets the mouse handler GS
         mouseH.GS = GS;
 
         //Setting the JFrame to be full screen
         gd.setFullScreenWindow(Main.window);
-
+	
+	//Without this, there can be a weird frame while entering fullscreen
         update();
         repaint();
     }
 
+    //Begins execution of run()
     public void startGameThread() {
         gameThread = new Thread(this);
         gameThread.start();
@@ -338,6 +240,7 @@ public class GamePanel extends JPanel implements Runnable {
     }
 
     //All sound related stuff
+    //Alternatively, you can just directly call methods from the sound object
     public void playSF(int i) {
         sound.setFile(i);
         setSFVolume(volume);
