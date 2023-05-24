@@ -1,6 +1,6 @@
 # 1.10: Keyboard Input
 
-If you have ever used a computer, chances are you've used a keyboard.  
+If you have ever used a computer, chances are you've used a keyboard. But how can we incorporate this into our application?  
 
 ### Use Existing Keybinds
 
@@ -26,42 +26,40 @@ Comparatively, creaing new keybinds is much more complicated.
 
 First navigate to the `KeyHandler.java` file in `main`.  
 At the top there are detailed versions of the first three steps:  
-1. Create a boolean to keep track of if a certain key is pressed. I format it as [keyName]IsPressed. For this example, I'll being using the "up" key stroke (whether that is by pressing w or the up arrow).  
-2. Create two new classes with a relevant name, one for handling the key being pressed and the other for being released.  
-Example:
+-Create a boolean to keep track of if a certain key is pressed. I format it as [keyName]IsPressed. For this example, I'll being using the "up" key stroke (whether that is by pressing w or the up arrow).  
+-Create two new classes with a relevant name, one for handling the key being pressed and the other for being released:  
 
-    	public class UpPressedAction extends AbstractAction {}
+	public class UpPressedAction extends AbstractAction {}
 	
-    	public class UpReleasedAction extends AbstractAction {}
-	
-3. Add the actionPerformed method to each, updating the boolean variable we created.  
-Example:
+	public class UpReleasedAction extends AbstractAction {}
 
-	    public class UpPressedAction extends AbstractAction {
-		@Override public void actionPerformed(ActionEvent e) {
-		    upIsPressed = true;
-		}
-	    }
+-Add the actionPerformed method to each, updating the boolean variable we created.  
 
-	    public class UpReleasedAction extends AbstractAction {
+	public class UpPressedAction extends AbstractAction {
 		@Override public void actionPerformed(ActionEvent e) {
-		    upIsPressed = false;
+			upIsPressed = true;
 		}
-	    }
+	}
+
+	public class UpReleasedAction extends AbstractAction {
+		@Override public void actionPerformed(ActionEvent e) {
+			upIsPressed = false;
+		}
+	}
 	    
 ##### In `GamePanel`
 
-The next four steps are all in the `GamePanel` class.  
-First, create new objects of the classes you created.
+The next two steps are all in the `GamePanel` class.  
+-Create new objects of the classes you created.
 
 	Action upPressedAction = keyH.new UpPressedAction();
 	Action upReleasedAction = keyH.new UpReleasedAction();
 	
-Next, inside the `updateKeyBindings` method, we would add the following code:
+-Inside the `updateKeyBindings` method, we would add the following code:
 
 	thisWindow.getInputMap().put(KeyStroke.getKeyStroke("UP"), "upPressed");
 		thisWindow.getActionMap().put("upPressed", upPressedAction);
-        thisWindow.getInputMap().put(KeyStroke.getKeyStroke("released UP"), "upReleased");
+	thisWindow.getInputMap().put(KeyStroke.getKeyStroke("released UP"), "upReleased");
 		thisWindow.getActionMap().put("upReleased", upReleasedAction);
 		
 This code maps the keystroke of the up arrow key to our actions.  
@@ -69,5 +67,40 @@ If you wanted to make it so pressing the w key did the same thing, you would rep
 
 ### Example: Moving a Shape
 
-Let's say you wanted to make a simple program that moved a square around the canvas, where w moved it up, s moved it down, a moved it right and d moved it right.  
-This code will go through adding the actions and booleans to `KeyhHndler`, binding the actions in `GamePanel`, and then using it to move the rectangle in `update()`.  
+Let's say you wanted to make a simple program that moved a square around the canvas using the arrow keys.  
+This code segment assumes that arrow keys are already tracked in `KeyHandler` (built into template) and just shows how to implement this in `Game`.  
+First, add the following instance variables to `Game`:  
+
+	//Keeps track of rectangle position
+    private double centerX = 800, centerY = 450;
+    private int width = 100, height = 100;
+	
+Second, add the following statements to `update()`:
+
+	//Keyboard controls, where each arrow key moves the rectangle accordingly
+	if (gp.keyH.upArrowPressed) {
+		centerY -= 0.1;
+	}
+	if (gp.keyH.downArrowPressed) {
+		centerY += 0.1;
+	}
+	if (gp.keyH.leftArrowPressed) {
+		centerX -= 0.1;
+	}
+	if (gp.keyH.rightArrowPressed) {
+		centerX += 0.1;
+	}
+	
+	//Keeps rectangle from going out of bounds
+	if (centerX < width)
+		centerX = width;
+	if (centerX > 1600-width)
+		centerX = 1600-width;
+	if (centerY < height)
+		centerY = height;
+	if (centerY > 900-height)
+		centerY = height;
+	
+Finally, draw the rectangle in `draw(Graphics2D, double)`:
+
+	g2.fillRectangle((int) ((centerX-width/2.0)*GS), (int) ((centerY-height/2.0)*GS), width, height);
