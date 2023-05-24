@@ -1,4 +1,4 @@
-# 1.6 Creating Text
+# 1.6: Creating Text
 
 We can always create text with shapes, but it is much easier to use built in methods.
 
