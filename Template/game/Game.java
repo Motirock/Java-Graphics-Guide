@@ -1,7 +1,5 @@
 package game;
 
-import main.KeyHandler;
-import main.MouseHandler;
 import main.GamePanel;
 
 import java.awt.Graphics2D;
@@ -20,5 +18,5 @@ public class Game {
         updates++;
     }
 
-    public void draw(Graphics2D g2) {}
+    public void draw(Graphics2D g2, double GS) {}
 }
