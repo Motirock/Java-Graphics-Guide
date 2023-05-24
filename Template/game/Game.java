@@ -3,7 +3,6 @@ package game;
 import main.GamePanel;
 
 import java.awt.Graphics2D;
-import java.util.ArrayList;
 
 public class Game {
     private long updates = 0;
