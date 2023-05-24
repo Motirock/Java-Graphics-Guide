@@ -7,24 +7,6 @@ This guide is broken up into different parts. To navigate to different parts, na
 
 
 
+##### MY TODO LIST
 
-
-
-
-
-
-
-
-
-
-
-
-## Hello
-
-### World
-
-#### !
-
-##### [You're finally awake](https://github.com/Motirock)
-
-sus
+ADD EXAMPLE FILE FOR 1.8 (ROTATIONS), 1.9 (SOUND), and 1.11 (MOUSE)
