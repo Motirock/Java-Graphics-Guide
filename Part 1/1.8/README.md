@@ -1,4 +1,4 @@
-# Image Transformations
+# 1.8: Image Transformations
 
 So far, the images that we have drawn are aligned with the edges of the window. But if we wanted to rotate it? This tutorial demonstrates how to rotate and draw an image in java.  
 
@@ -59,9 +59,9 @@ Next, if you want to change the image used, update the file path to reflect the 
     
     image = ImageIO.read(getClass().getResourceAsStream("/res/apple.png"));
     
-Now, we will have to modify our `draw(Graphics2D)` method of `Game` to rotate the image.  
+Now, we will have to modify our `draw(Graphics2D, double)` method of `Game` to rotate the image.  
 
-    ImageUtils.drawRotatedImage(g2, image, degrees, x, y, w, h, centerX, centerY, 1.0);
+    ImageUtils.drawRotatedImage(g2, image, degrees, x, y, w, h, centerX, centerY, GS);
 
 ### A Note on "Graphics Scaling"
 
