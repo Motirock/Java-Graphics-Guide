@@ -104,3 +104,7 @@ Second, add the following statements to `update()`:
 Finally, draw the rectangle in `draw(Graphics2D, double)`:
 
 	g2.fillRectangle((int) ((centerX-width/2.0)*GS), (int) ((centerY-height/2.0)*GS), width, height);
+	
+You'll notice that I'm using `GS` so that the graphics work well as long as the screen dimensions (width/height) remain around 16/9.  
+	
+Now, let's move on to mouse input: [1.11](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Part%201/1.11)
