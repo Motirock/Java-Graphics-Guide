@@ -45,7 +45,7 @@ public class Game {
         }
     }
     
-    public draw(Graphics2D g2) {
+    public draw(Graphics2D g2, double GS) {
         //Draws our text at the coordinates given.
         g2.drawString(str, xCoordinate, yCoordinate);
     }
