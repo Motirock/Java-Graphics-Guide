@@ -1,4 +1,4 @@
-# 1.5 Shapes and Colors
+# 1.5: Shapes and Colors
 
 So far, we have seen some basic capabilities of `java.awt.Color` and `java.awt.Graphics2D` by drawing a red circle.  
 In this part, I will explain more of the fundamentals of these libraries.
