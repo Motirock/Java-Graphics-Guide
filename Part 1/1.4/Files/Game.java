@@ -25,7 +25,7 @@ public class Game {
         }
     }
     
-    public draw(Graphics2D g2) {
+    public draw(Graphics2D g2, double GS) {
         g2.setColor(Color.RED);
         g2.fillOval(800-radius, 450-radius, radius*2, radius*2);
     }
