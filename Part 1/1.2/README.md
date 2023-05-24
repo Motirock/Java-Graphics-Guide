@@ -1,11 +1,12 @@
-# 1.2 Creating the Game class
+# 1.2: Creating the Game class
 
-When you first try to compile Main.java, it will fail to compile because there is no Game class. To fix this, we will need to create a rudimentary Game class with the required methods.
+If you downloaded the template, you most likely can just open up `Game.java` and it should have all of what is in this section.  
+If you try to compile Main.java, it will fail to compile because there is no Game class. To fix this, we will need to create a rudimentary Game class with the required methods.  
 
 ### Steps:
--Navigate to the "src" folder
--Create a new folder named "game"
--Create a new file named "Game.java" (the suffix/file type is important)
+-Navigate to the `src` folder
+-Create a new folder named `game`
+-Create a new file named `Game.java` (the suffix/file type is important)
 -Some applications automatically create a class header for you, but if it is not there create it like so:  
 
     package game;  
@@ -34,7 +35,7 @@ When you first try to compile Main.java, it will fail to compile because there i
     
     }
     
-    public draw(Graphics2D g2) {
+    public draw(Graphics2D g2, double GS) {
     
     }
 
