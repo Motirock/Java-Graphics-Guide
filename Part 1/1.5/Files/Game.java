@@ -18,7 +18,7 @@ public class Game {
         updates++; //Note that by default 1000 updates per second are attempted
     }
     
-    public draw(Graphics2D g2) {
+    public draw(Graphics2D g2, double GS) {
         g2.setColor(Color.BLUE);
         g2.fillOval(400, 50, 800, 800);
         g2.setColor(Color.GREEN);
