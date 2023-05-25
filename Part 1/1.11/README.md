@@ -30,4 +30,33 @@ Try scrolling in different directions in different speeds to see what is printed
 ### Example: Moving a Shape
 
 In the previous tutorial, we moved a rectangle with a keyboard. To keep it interesting, let's move a circle with a mouse.  
-First, create instance variables.  
+First, create the following instance variables in `Game`:  
+
+    //Keeps track of circle position
+    private double centerX = 800, centerY = 450;
+    private double radius = 50;
+    
+Then, add the following code to `update()` to make the circle's position change while staying in bounds:  
+
+    //Mouse controls
+    centerX = gp.mouseX;
+    centerY = gp.mouseY;
+
+    //Keeps rectangle from going out of bounds
+    if (centerX < radius)
+        centerX = radius;
+    if (centerX > 1600-radius)
+        centerX = 1600-radius;
+    if (centerY < radius)
+        centerY = radius;
+    if (centerY > 900-radius)
+        centerY = radius;
+
+Finally, update `draw(Graphics2D, double)`:
+
+    //Setting the color to be blue
+    g2.setColor(Color.BLUE);
+    //Draws the circle
+    g2.fillOval((int) ((centerX-radius/2.0)*GS), (int) ((centerY-radius/2.0)*GS), radius, radius);
+    
+This is my final tutorial! I created some example programs as well.  
