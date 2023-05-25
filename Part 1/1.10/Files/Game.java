@@ -2,6 +2,8 @@ package game;
 
 import main.GamePanel;
 
+import java.awt.Color;
+
 public class Game {
     private GamePanel gp;
 
@@ -44,6 +46,8 @@ public class Game {
     }
     
     public draw(Graphics2D g2, double GS) {
+        //Setting the color to be green
+        g2.setColor(Color.GREEN);
         //Draws the rectangle
         g2.fillRectangle((int) ((centerX-width/2.0)*GS), (int) ((centerY-height/2.0)*GS), width, height);
     }
