@@ -103,6 +103,9 @@ Second, add the following statements to `update()`:
 	
 Finally, draw the rectangle in `draw(Graphics2D, double)`:
 
+	//Setting the color to be green
+        g2.setColor(Color.GREEN);
+	//Draws the rectangle
 	g2.fillRectangle((int) ((centerX-width/2.0)*GS), (int) ((centerY-height/2.0)*GS), width, height);
 	
 You'll notice that I'm using `GS` so that the graphics work well as long as the screen dimensions (width/height) remain around 16/9.  
