@@ -2,7 +2,9 @@ package game;
 
 import main.GamePanel;
 
+import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics2D;
 
 public class Game {
     private GamePanel gp;
@@ -16,17 +18,16 @@ public class Game {
 
     public Game(GamePanel gp) {
         this.gp = gp;
-        
-        //Attributes about the color only need to be set once; they remain until they are changed.
-        g2.setColor(Color.RED);
-        g2.setFont(new Font("TimesRoman", Font.BOLD | Font.ITALIC, 80));
     }
     
-    public update() {
+    public void update() {
         updates++; //Note that by default 1000 updates per second are attempted
     }
     
-    public draw(Graphics2D g2, double GS) {
+    public void draw(Graphics2D g2, double GS) {   
+        //Attributes about the color only need to be set once; they remain until they are changed.
+        g2.setColor(Color.RED);
+        g2.setFont(new Font("TimesRoman", Font.BOLD | Font.ITALIC, 80));
         //Draws our text at the coordinates given.
         g2.drawString(str, xCoordinate, yCoordinate);
     }
