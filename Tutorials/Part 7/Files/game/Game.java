@@ -3,8 +3,10 @@ package game;
 import main.GamePanel;
 
 import java.awt.image.BufferedImage;
-import javax.imageio.ImageIO;
+import java.awt.Graphics2D;
 import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 public class Game {
     private GamePanel gp;
@@ -12,7 +14,7 @@ public class Game {
     private long updates = 0; //Total times update() has been run
 
     //A BufferedImage which does not store anything yet
-    public BufferedImage chestImage = null;
+    public BufferedImage image = null;
 
     //Position and dimensions of the image
     private int x = 350;    //Top left corner x
@@ -32,7 +34,7 @@ public class Game {
         }
     }
     
-    public update() {
+    public void update() {
         //Keeps track of total times update() was called
         updates++;
 
@@ -45,8 +47,7 @@ public class Game {
         }
     }
     
-    public draw(Graphics2D g2, double GS) {
-        //Draws our text at the coordinates given.
-        g2.drawString(str, xCoordinate, yCoordinate);
+    public void draw(Graphics2D g2, double GS) {
+        g2.drawImage(image, x, y, w, h, null);
     }
 }
