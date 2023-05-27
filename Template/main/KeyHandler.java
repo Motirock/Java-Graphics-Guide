@@ -33,7 +33,7 @@ How to add an action for a key:
 
 package main;
 
-import java.awt.event.*;//TODO refine this to be only necessary libraries
+import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
 

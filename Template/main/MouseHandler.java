@@ -5,7 +5,11 @@ NOTE: just like KeyHandler, the instance variables are public. This allows you t
 
 package main;
 
-import java.awt.event.*; //TODO
+import java.awt.event.MouseListener;
+import java.awt.event.MouseWheelListener;
+import java.awt.event.MouseMotionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseWheelEvent;
 
 import javax.swing.SwingUtilities;
 
@@ -57,7 +61,7 @@ public class MouseHandler implements MouseListener, MouseWheelListener, MouseMot
     }
     
     //Mouse scrolling and how much it scrolls. 
-    //The amount scrolled and its direction depends on your system, so make sure to check using the TODO Mouse Hello World program
+    //The amount scrolled and its direction depends on your system, so make sure to check Part 11
     @Override
     public void mouseWheelMoved(MouseWheelEvent e) {
         mouseScrolled = true;

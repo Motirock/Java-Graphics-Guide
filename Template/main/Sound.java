@@ -8,8 +8,6 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.FloatControl;
 
-//TODO pausing and resuming????
-
 public class Sound {
     private ArrayList<URL> soundURLs = new ArrayList<URL>();   //By default, it can store 30 sounds
     private Clip clip;                      //Used to play audio
@@ -19,7 +17,7 @@ public class Sound {
     //Loads URLs of sounds
     public Sound(ArrayList<String> files) {
         for (int i = 0; i < files.size(); i++)
-            soundURLs.getClass().getResource("/res/audio/"+add(files.get(i));
+            soundURLs.getClass().getResource("/res/audio/"+files.get(i));
     }
     
     //Sets the file being played. Returns whether or not it was successful without errors
@@ -34,7 +32,6 @@ public class Sound {
         } catch(Exception e) {
             return false;
         }
-        return false;
     }
     
     //Plays the current sound from the beginning
@@ -48,7 +45,7 @@ public class Sound {
         clip.loop(Clip.LOOP_CONTINUOUSLY);
     }
     
-    //Stops the current sounds TODO DOES THIS PAUSE OR CLEAR?
+    //Stops the current sounds
     public void stop() {
         clip.stop();
     }

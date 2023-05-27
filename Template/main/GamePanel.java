@@ -1,8 +1,11 @@
 package main;
 
+
 import javax.swing.*;
 
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class GamePanel extends JPanel implements Runnable {
     //Game Globals
@@ -59,12 +62,13 @@ public class GamePanel extends JPanel implements Runnable {
     }
 
     //Mouse
-    public MouseHandler mouseH = new MouseHandler(this, GS);
+    public MouseHandler mouseH = new MouseHandler(GS);
 	
     //Game object: responsible for game itself
     game.Game game = new game.Game(this);
 		
     //Sound: the Strings are the names of the sound files used. Also note that the order matters.
+    ArrayList<String> soundFiles = new ArrayList<String>(Arrays.asList("bruh.wav", "bruh.wav"));
     Sound sound = new Sound(new ArrayList<String>(Arrays.asList("bruh.wav", "bruh.wav")));
 	
     //Thread is used to run the run() method
@@ -72,7 +76,7 @@ public class GamePanel extends JPanel implements Runnable {
 
     //Used in other classes where GameState can't be accessed
     public void setGameState(String thisGameState) {
-        switch (thisGameState) {
+        switch (thisGameState.toUpperCase()) {
             case "PLAYING":
                 gameState = GameState.PLAYING;
                 break;
@@ -85,6 +89,8 @@ public class GamePanel extends JPanel implements Runnable {
             case "INGAMEMENU":
                 gameState = GameState.INGAMEMENU;
                 break;
+            default:
+                System.out.println("ERROR: CAN'T SET TO INVALID GAMESTATE "+thisGameState);
         }
     }
     //Used in other classes where GameState can't be accessed
@@ -219,9 +225,6 @@ public class GamePanel extends JPanel implements Runnable {
         mouseH.mouseRightClicked = false;
         mouseH.mouseScrolled = false;
         mouseH.mouseScrollAmount = 0;
-        keyH.escapePressed = false;
-        keyH.enterPressed = false;
-        keyH.lastKeyPressed = null;
     }
 
     //Graphical updates
@@ -234,7 +237,7 @@ public class GamePanel extends JPanel implements Runnable {
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON); 
         g2.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON); 
 
-        game.draw(g2);        
+        game.draw(g2, GS);        
 
         g2.dispose();
     }
