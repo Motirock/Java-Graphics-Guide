@@ -3,6 +3,7 @@ package game;
 import main.GamePanel;
 
 import java.awt.Color;
+import java.awt.Graphics2D;
 
 public class Game {
     private GamePanel gp;
@@ -14,7 +15,7 @@ public class Game {
         this.gp = gp;
     }
     
-    public update() {
+    public void update() {
         updates++; //Note that by default 1000 updates per second are attempted
 
         if (updates % 10 == 0) { //The radius will oscillate between 100 and 200, switching direction every second.
@@ -25,7 +26,7 @@ public class Game {
         }
     }
     
-    public draw(Graphics2D g2, double GS) {
+    public void draw(Graphics2D g2, double GS) {
         g2.setColor(Color.RED);
         g2.fillOval(800-radius, 450-radius, radius*2, radius*2);
     }
