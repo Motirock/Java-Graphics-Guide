@@ -1,4 +1,4 @@
-# 1.11: Mouse Input
+# Part 11: Mouse Input
 
 Whenever we use a computer, we will almost certainly use a mouse at least at some point.  
 
@@ -59,4 +59,5 @@ Finally, update `draw(Graphics2D, double)`:
     //Draws the circle
     g2.fillOval((int) ((centerX-radius/2.0)*GS), (int) ((centerY-radius/2.0)*GS), radius, radius);
     
-This is my final tutorial! I created some example programs as well.  
+This is my final tutorial! I created some example programs as well, so feel free to explore them.  
+If you found this guide useful, make sure to SMASH that star button and DESTROY that follow button (can we get to TWO followers by the end of 2075?).    
