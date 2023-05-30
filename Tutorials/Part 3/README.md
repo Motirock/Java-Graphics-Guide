@@ -1,4 +1,4 @@
-# 1.3: Using the `draw` Method
+# Part 3: Using the `draw` Method
 
 Last time, we created the fundamentals of the `Game` class. In this section, we will draw our first shape: a red circle.  
 We will NOT modify `update()` because there are no logical updates to be executed. We will just modify the `draw` method.
@@ -19,6 +19,6 @@ We will NOT modify `update()` because there are no logical updates to be execute
     
  -Now, when you compile and run `Main.java`, a red circle should be shown on screen.
  
- [1.4](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Part%201/1.4)
+ [Part 4: Using `update()`](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Tutorials/Part%204)
     
     
