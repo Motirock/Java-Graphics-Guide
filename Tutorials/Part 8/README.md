@@ -1,4 +1,4 @@
-# 1.8: Image Transformations
+# Part 8: Image Transformations
 
 So far, the images that we have drawn are aligned with the edges of the window. But if we wanted to rotate it? This tutorial demonstrates how to rotate and draw an image in java.  
 
@@ -69,4 +69,8 @@ If you have looked through my code, you may notice the variable `GS`. I use this
 
 If you want to have more image utilities, you can always modify the class, like adding another rotate method that takes radians instead of degrees.
 
-[1.9](https://github.com/Motirock/An-Introduction-To-Java-Graphics/edit/main/Part%201/1.9)
+### Other Transformations
+
+I only have one image transformation included. If you want to include others, you can research and implement them yourself. Generally, if you can think of the image transformation, there is already a method to do it.  
+
+[Part 9: Sound](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Tutorials/Part%209)
