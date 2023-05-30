@@ -99,4 +99,4 @@ In the //TODO do this at home, create example sound program and test all methods
   
 
 Now that we have covered output, you should be ready to move on to input.  
-[Part 10: Keyboard Input](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Part%201/1.10?scrlybrkr=efa11cf5)
+[Part 10: Keyboard Input](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Tutorials/Part%2010)
