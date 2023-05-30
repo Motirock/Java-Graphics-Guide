@@ -1,7 +1,7 @@
-# 1.2: Creating the Game class
+# Part 2: Creating the `Game` Class
 
-If you downloaded the template, you most likely can just open up `Game.java` and it should have all of what is in this section.  
-If you try to compile Main.java, it will fail to compile because there is no Game class. To fix this, we will need to create a rudimentary Game class with the required methods.  
+If you downloaded the template, you most likely can just open up `Game.java` in `game`, and it should have all of what is in this section.  
+If you try to compile Main.java without the `Game` class, it will fail. If you want to create the `Game.java` file from scratch, you can follow this tutorial.  
 
 ### Steps:
 -Navigate to the `src` folder
@@ -15,9 +15,6 @@ If you try to compile Main.java, it will fail to compile because there is no Gam
    
 -Add the following imports after the package statement but before the class header:  
     
-    import main.KeyHandler;  
-    import main.GamePanel;  
-
     import java.awt.Graphics2D;  
     
 -Create the following instance variable inside the class body:
@@ -31,12 +28,12 @@ If you try to compile Main.java, it will fail to compile because there is no Gam
         this.gp = gp;
     }
     
-    public update() {
+    public void update() {
     
     }
     
-    public draw(Graphics2D g2, double GS) {
+    public void draw(Graphics2D g2, double GS) {
     
     }
 
-[1.3](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Part%201/1.3)
+[Part 3: Using the `draw` Method](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Tutorials/Part%203)
