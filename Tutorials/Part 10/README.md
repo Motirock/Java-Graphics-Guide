@@ -1,4 +1,4 @@
-# 1.10: Keyboard Input
+# Part 10: Keyboard Input
 
 If you have ever used a computer, chances are you've used a keyboard. But how can we incorporate this into our application?  
 
