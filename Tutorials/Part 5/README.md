@@ -1,4 +1,4 @@
-# 1.5: Shapes and Colors
+# Part 5: Shapes and Colors
 
 So far, we have seen some basic capabilities of `java.awt.Color` and `java.awt.Graphics2D` by drawing a red circle.  
 In this part, I will explain more of the fundamentals of these libraries.
@@ -87,4 +87,4 @@ The fillRect method is used like so:
 For most shapes (including ovals and rectangles) the x and y parameters refer to the top-left corner of the shape, with a greater x meaning further right and a greater y meaning further down.  
 There are manny other methods for drawing shapes which I will not cover here, but we can use the API: [`java.awt.Graphics2D` API](https://docs.oracle.com/javase/7/docs/api/java/awt/Graphics2D.html)
 
-[1.6](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Part%201/1.6)
+[Part 6: Creating Text](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Tutorials/Part%206)
