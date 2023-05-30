@@ -1,4 +1,4 @@
-# 1.4: Using `update()`
+# Part 4: Using `update()`
 
 Last time, we created a single, red circle. However, it is static.
 To fix this, we can use the `update()` method in `Game.java`.
@@ -28,5 +28,5 @@ Finally, we will change our `draw(Graphics2D)` method. We want the circle to sta
     
 Now, the circle's radius should oscillate.  
  
- [1.5](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Part%201/1.5)
+ [Part 5: Shapes and Colors](https://github.com/Motirock/An-Introduction-To-Java-Graphics/edit/main/Tutorials/Part%205)
             
