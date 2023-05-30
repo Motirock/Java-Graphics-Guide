@@ -1,4 +1,4 @@
-# Part 1: Summary of Main, GamePanel, and Game
+# Part 1: Summary of `Main`, `GamePanel`, and `Game`
 
 #### Main
 
@@ -28,4 +28,4 @@ Next, we need to find the right folder. For most, the right folder is the `src` 
 Once you have found the right folder, drag in the contents of the `Template` folder in the downloaded version of the repository.  
 From now on, I am going to refer to the mentioned folder as `src` even if it not named this.  
 
-[Part 2: Creating the Game Class](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Tutorials/Part%202)
+[Part 2: Creating the `Game` Class](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Tutorials/Part%202)
