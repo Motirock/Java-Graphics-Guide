@@ -1,4 +1,4 @@
-# 1.7: Drawing Images
+# Part 7: Drawing Images
 
 Whenever you use an application, you are sure to notice that images are involved.  
 Even if the images can be made with shapes, it is generally best to use images.  
@@ -95,4 +95,4 @@ Below is a code sample using this method and the variables we previously defined
    
 To learn more about `BufferedImage` class, you can visit the [API.](https://docs.oracle.com/javase/8/docs/api/java/awt/image/BufferedImage.html)
 
-[1.8](https://github.com/Motirock/An-Introduction-To-Java-Graphics/edit/main/Part%201/1.8)
+[Part 8: Image Transformations](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Tutorials/Part%208)
