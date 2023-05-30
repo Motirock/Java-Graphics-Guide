@@ -1,4 +1,4 @@
-# 1.6: Creating Text
+# Part 6: Creating Text
 
 We can always create text with shapes, but it is much easier to use built in methods.
 
@@ -33,6 +33,6 @@ Now, we can draw the `String`.
 
 To learn more about the libraries I used, you can check out the [`java.awt.Graphics2D` API](https://docs.oracle.com/javase/7/docs/api/java/awt/Graphics2D.html) and [`java.awt.Font` API](https://docs.oracle.com/javase/7/docs/api/java/awt/Font.html).
 
-[1.7](https://github.com/Motirock/An-Introduction-To-Java-Graphics/edit/main/Part%201/1.7)
+[Part 7: Drawing Images](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Tutorials/Part%207)
 
 
