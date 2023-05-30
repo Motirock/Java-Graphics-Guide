@@ -110,4 +110,4 @@ Finally, draw the rectangle in `draw(Graphics2D, double)`:
 	
 You'll notice that I'm using `GS` so that the graphics work well as long as the screen dimensions (width/height) remain around 16/9.  
 	
-Now, let's move on to mouse input: [1.11](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Part%201/1.11)
+Now, let's move on to mouse input: [Part 11: Mouse Input](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Tutorials/Part%2011)
