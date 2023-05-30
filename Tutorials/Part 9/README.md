@@ -1,4 +1,4 @@
-# 1.9: Sound
+# Part 9: Sound
 
 For these past tutorials, we have only been using visuals. But what about sound?  
 This tutorial will cover a basic sound class and how to use it.  
@@ -95,7 +95,8 @@ Change the line where we create the `Sound` object in `GamePanel` (it is after t
   
 If it this already (it is like this in the template), you don't have to modify it.  
 Now, we can start modifying the `Game` class. 
-In the //TODO do this at home, create example sound program and test all methods
+In the //TODO do this at home, create example sound program and test all methods.
+  
 
-
-Now you should be ready to move on to input: [1.10](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Part%201/1.10?scrlybrkr=efa11cf5)
+Now that we have covered output, you should be ready to move on to input.  
+[Part 10: Keyboard Input](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Part%201/1.10?scrlybrkr=efa11cf5)
