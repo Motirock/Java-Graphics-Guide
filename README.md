@@ -4,7 +4,18 @@ This guide is broken up into different parts. To navigate to different parts, na
 
 ## Table of Contents
 
-
+Tutorials:
+-[Part 1: Summary of Main, GamePanel, and Game](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Tutorials/Part%201)
+-[Part 2: Creating the Game Class](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Tutorials/Part%202)
+-[Part 3: Using the `draw` Method](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Tutorials/Part%203)
+-[Part 3: Using the `draw` Method](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Tutorials/Part%204)
+-[Part 3: Using the `draw` Method](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Tutorials/Part%205)
+-[Part 3: Using the `draw` Method](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Tutorials/Part%206)
+-[Part 3: Using the `draw` Method](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Tutorials/Part%207)
+-[Part 3: Using the `draw` Method](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Tutorials/Part%208)
+-[Part 3: Using the `draw` Method](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Tutorials/Part%209)
+-[Part 3: Using the `draw` Method](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Tutorials/Part%2010)
+-[Part 3: Using the `draw` Method](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Tutorials/Part%2011)
 
 
 ##### MY TODO LIST
