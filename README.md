@@ -8,7 +8,7 @@ Template:
 
 Tutorials:  
 -[Part 1: Summary of Main, GamePanel, and Game](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Tutorials/Part%201)  
--[Part 2: Creating the Game Class](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Tutorials/Part%202)  
+-[Part 2: Creating the `Game` Class](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Tutorials/Part%202)  
 -[Part 3: Using the `draw` Method](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Tutorials/Part%203)  
 -[Part 4: Using the `update` Method](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Tutorials/Part%204)  
 -[Part 5: Shapes and Colors](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Tutorials/Part%205)  
