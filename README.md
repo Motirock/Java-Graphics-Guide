@@ -5,9 +5,10 @@ This guide is broken up into different parts. To navigate to different parts, na
 ## Table of Contents
 
 Template:  
+Download the repository and then transfer the files from the template folder into your own project folder. If you are having trouble, it may because the IDE you are using may require certain files for projects to work correctly. For example, in BlueJ, you must first create packages in the GUI and *then* transfer in your files.  
 
 Tutorials:  
--[Part 1: Summary of Main, GamePanel, and Game](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Tutorials/Part%201)  
+-[Part 1: Summary of `Main`, `GamePanel`, and `Game`](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Tutorials/Part%201)  
 -[Part 2: Creating the `Game` Class](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Tutorials/Part%202)  
 -[Part 3: Using the `draw` Method](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Tutorials/Part%203)  
 -[Part 4: Using the `update` Method](https://github.com/Motirock/An-Introduction-To-Java-Graphics/tree/main/Tutorials/Part%204)  
@@ -25,5 +26,4 @@ Example programs:
 ##### MY TODO LIST
 
 ADD EXAMPLE FILE FOR 1.8 (ROTATIONS), 1.9 (SOUND), and 1.11 (MOUSE). 
-ADD TABLE OF CONTENTS, FIX LINKS BETWEEN SECTIONS
-RENAME PART 4 to be "Part 4: Using the `update` Method" (change links in part 3)
+ADD TABLE OF CONTENTS
