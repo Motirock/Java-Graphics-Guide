@@ -14,7 +14,7 @@ public class Sound {
     private int volume = 50;        //Volume: default is 50%. I made sure it is linear instead of in decibels (logarithmic)
     private FloatControl fc;    //Used to help control volume
     private float maxVolume = 6.0f;     //Max volume in decibels
-    private float minVolume = -60.0f;    //Min volume in decibels
+    private float minVolume = -80.0f;   //Min volume in decibels
     
     //Loads URLs of sounds
     public Sound(ArrayList<String> files) {
