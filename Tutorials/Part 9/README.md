@@ -9,10 +9,12 @@ Inside the `main` folder, there should be a `Sound.java` file. Let's look inside
 At the top, you will notice several import statements. You don't have to know what each one does or how it works, but you can find their APIs online.  
 In the beginning of the class definition for `Sound`, there are the following instance variables:  
   
-    private URL soundURL[] = new URL[30];   //By default, it can store 30 sounds
-    private Clip clip;                      //Used to play audio
-    private public int volume = 50;         //Volume: default is 50%. I made sure it is linear instead of in decibels (logarithmic)
-    private FloatControl fc; 
+    private ArrayList<URL> soundURLs = new ArrayList<URL>();   //By default, it can store 30 sounds
+    private Clip clip;                  //Used to play audio
+    private int volume = 50;        //Volume: default is 50%. I made sure it is linear instead of in decibels (logarithmic)
+    private FloatControl fc;    //Used to help control volume
+    private float maxVolume = 6.0f;     //Max volume in decibels
+    private float minVolume = -80.0f;   //Min volume in decibels
   
 Much more importantly, there are methods to actually use the class.  
 
@@ -23,14 +25,13 @@ First, there is the constructor. This is used to load the sounds used.
     //Loads URLs of sounds
     public Sound(ArrayList<String> files) {
         for (int i = 0; i < files.size(); i++)
-            soundURLs.getClass().getResource("/res/audio/"+add(files.get(i));
+            soundURLs.add(getClass().getResource("/res/audio/"+files.get(i)));
     }
     
 The only parameters is an `ArrayList` of strings which is contains the names of the audio files. For example, if you named your sounds `death.wav` and `heal.wav`, you would load it using the constructor of the `Sound` class in the following way:
     
-    //First, it creates a list of the Strings we need
-    //Then, it creates an ArrayList from this list
-    //Finally, it passes this ArrayList to the Sound in a constructor to load them
+    //Sound: the Strings are the names of the sound files used. Also note that the order matters.
+    ArrayList<String> soundFiles = new ArrayList<String>(Arrays.asList("bruh.wav", "bruh.wav"));
     Sound sound = new Sound(new ArrayList<String>(Arrays.asList("death.wav", "heal.wav")));
   
 ### Setting the File
@@ -48,9 +49,9 @@ This is where the `setFile(int)` method comes in.
             updateVolume();
             return true;
         } catch(Exception e) {
+            System.out.println("Setting file in Sound failed!");
             return false;
         }
-        return false;
     }
     
 We pass to the method the index of the sound file we want to play. This means that we will have to know the index of the file name in the `ArrayList` we passed in the constructor of the `Sound` object.   
@@ -66,6 +67,7 @@ No sound will play yet, because we haven't called the `play()` method.
 
 The `play()` method plays the sound we sent with `setfile(int i)` from the beginning.  
 For it to work, we most call `play()` after `setFile(int i)` for the `Sound` class to work as intended.  
+I actually made some methods in the bottom of `GamePanel` which can help take care of secondary steps in playing a sound, like updating the volume. You can use these, if you prefer.  
 
 ### Other Methods
 
