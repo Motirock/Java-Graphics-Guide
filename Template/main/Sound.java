@@ -35,7 +35,6 @@ public class Sound {
             System.out.println("Setting file in Sound failed!");
             return false;
         }
-        
     }
     
     //Plays the current sound from the beginning
