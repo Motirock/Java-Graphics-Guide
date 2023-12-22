@@ -50,6 +50,6 @@ public class Game {
         //Setting the color to be green
         g2.setColor(Color.GREEN);
         //Draws the rectangle
-        g2.fillRect((int) ((centerX-width/2.0)*GS), (int) ((centerY-height/2.0)*GS), width, height);
+        g2.fillRect((int) ((centerX-width/2.0)*GS), (int) ((centerY-height/2.0)*GS), (int) (width*GS), (int) (height*GS));
     }
 }
