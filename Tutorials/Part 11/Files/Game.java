@@ -3,6 +3,7 @@ package game;
 import main.GamePanel;
 
 import java.awt.Color;
+import java.awt.Graphics2D;
 
 public class Game {
     private GamePanel gp;
@@ -17,7 +18,7 @@ public class Game {
         this.gp = gp;
     }
     
-    public update() {
+    public void update() {
         updates++;
 
         //Mouse controls
@@ -32,13 +33,13 @@ public class Game {
         if (centerY < radius)
             centerY = radius;
         if (centerY > 900-radius)
-            centerY = radius;
+            centerY = 900-radius;
     }
     
-    public draw(Graphics2D g2, double GS) {
+    public void draw(Graphics2D g2, double GS) {
         //Setting the color to be blue
         g2.setColor(Color.BLUE);
         //Draws the circle
-        g2.fillOval((int) ((centerX-radius/2.0)*GS), (int) ((centerY-radius/2.0)*GS), radius, radius);
+        g2.fillOval((int) ((centerX-radius)*GS), (int) ((centerY-radius)*GS), (int) (radius*2*GS), (int) (radius*2*GS));
     }
 }
