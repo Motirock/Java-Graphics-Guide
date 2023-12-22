@@ -50,14 +50,14 @@ Then, add the following code to `update()` to make the circle's position change 
     if (centerY < radius)
         centerY = radius;
     if (centerY > 900-radius)
-        centerY = radius;
+        centerY = 900-radius;
 
 Finally, update `draw(Graphics2D, double)`:
 
     //Setting the color to be blue
     g2.setColor(Color.BLUE);
     //Draws the circle
-    g2.fillOval((int) ((centerX-radius/2.0)*GS), (int) ((centerY-radius/2.0)*GS), radius, radius);
+    g2.fillOval((int) ((centerX-radius)*GS), (int) ((centerY-radius)*GS), (int) (radius*2*GS), (int) (radius*2*GS));
     
 This is my final tutorial! I created some example programs as well, so feel free to explore them.  
 If you found this guide useful, make sure to SMASH that star button and DESTROY that follow button (can we get to TWO followers by the end of 2075?).    
