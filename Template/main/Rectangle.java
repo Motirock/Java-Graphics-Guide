@@ -15,12 +15,23 @@ package main;
 public class Rectangle {
     public double x, y, width, height;
 
+    //Simple constructor
     public Rectangle(double x, double y, double width, double height) {
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
     }
+
+    //Default constructor, with all values as 0 by default (useless rectangle)
+    public Rectangle() {
+        this.x = 0;
+        this.y = 0;
+        this.width = 0;
+        this.height = 0;
+    }
+
+    //Simple getters (accessors) and setters (mutators)
 
     public double getX() {
         return x;
@@ -54,7 +65,16 @@ public class Rectangle {
         this.height = height;
     }
 
+    //If rectangles overlap, not just touch
+    //Based around x and y being corner positions, but in theory should work if they represent center
     public boolean intersects(Rectangle other) {
-        return x < other.x + other.width && x + width > other.x && y < other.y + other.height && y + height > other.y;
+        double centerX1 = this.x+this.width/2.0;
+        double centerY1 = this.y+this.height/2.0;
+        double centerX2 = other.x+other.width/2.0;
+        double centerY2 = other.y+other.height/2.0;
+        if (Math.abs(centerX2-centerX1) > (this.width+other.width)/2.0
+         || Math.abs(centerY2-centerY1) > (this.height+other.height)/2.0)
+            return false;
+        return true;
     }
 }
